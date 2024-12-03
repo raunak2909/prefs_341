@@ -29,6 +29,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    nameController.text = name;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Home'),
@@ -41,6 +44,7 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(onPressed: ()async{
             ///set data here
             prefs!.setString("name", nameController.text);
+            getData();
 
           }, child: Text('Save'))
         ],
